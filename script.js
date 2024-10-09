@@ -1,6 +1,7 @@
 // JavaScript for surprise reveal
 document.getElementById("surpriseButton").addEventListener("click", function() {
     document.getElementById("surpriseMessage").classList.add("reveal");
+    document.getElementById("surpriseImage").classList.add("show"); // Show the image
     startConfetti();
 });
 
