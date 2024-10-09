@@ -1,10 +1,13 @@
 const words = [
     { word: "DOBBAI", missing: ["O", "B", "A"] },
     { word: "PANDHI", missing: ["A", "D"] },
-    { word: "DENGAI", missing: ["D","N","I"] },
-    // { word: "PYTHON", missing: ["T", "O"] }
+    { word: "NAYALAA", missing: ["A","L"] }
 ];
+
 let currentWord = {};
+let currentIndex = 0; // To track the current word index
+let wordsGuessedCorrectly = 0;
+
 const wordContainer = document.getElementById('word-container');
 const userInput = document.getElementById('userInput');
 const resultMessage = document.getElementById('resultMessage');
@@ -15,8 +18,20 @@ const resetButton = document.getElementById('resetButton');
 function init() {
     resultMessage.textContent = "";
     userInput.value = "";
-    currentWord = words[Math.floor(Math.random() * words.length)];
-    displayWordWithBlanks();
+    currentIndex = 0;
+    wordsGuessedCorrectly = 0; // Reset guessed words counter
+    loadNewWord();
+}
+
+// Load the next word in sequence
+function loadNewWord() {
+    if (currentIndex < words.length) {
+        currentWord = words[currentIndex];
+        displayWordWithBlanks();
+    } else {
+        // All words guessed, redirect to surprise.html
+        window.location.href = "surprise.html";
+    }
 }
 
 // Display word with blanks
@@ -49,6 +64,22 @@ submitButton.addEventListener('click', () => {
         resultMessage.textContent = "Congratulations! You've completed the word!";
         resultMessage.style.color = "green";
         wordContainer.textContent = currentWord.word;
+        wordsGuessedCorrectly++;
+        currentIndex++;
+
+        // If all words are guessed, redirect after 5 seconds
+        if (wordsGuessedCorrectly === words.length) {
+            setTimeout(() => {
+                window.location.href = "surprise.html";
+            }, 1000); // Redirect to surprise.html after 5 seconds
+        } else {
+            // Load the next word after 5 seconds
+            setTimeout(() => {
+                resultMessage.textContent = "";
+                userInput.value = "";
+                loadNewWord();
+            }, 1000);
+        }
     } else {
         resultMessage.textContent = "Incorrect letters! Try again.";
         resultMessage.style.color = "red";

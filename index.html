@@ -3,9 +3,25 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Game</title>
+    <title>Message to Harshini</title>
+    <link rel="stylesheet" href="istyles.css" />
   </head>
   <body>
-    hi
+    <div class="message-container">
+      <h1 class="greeting">Hi Harshini!</h1>
+      <p class="reply-instruction">Please reply below:</p>
+
+      <div class="input-container">
+        <input
+          type="text"
+          id="userReply"
+          placeholder="Type your reply here..."
+          required
+        />
+        <button id="submitReply" class="glowing-button">Submit Reply</button>
+      </div>
+    </div>
+
+    <script src="iscript.js"></script>
   </body>
 </html>
