@@ -1,0 +1,79 @@
+/* General styles */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #121212;
+    color: #fff;
+    font-family: 'Arial', sans-serif;
+    flex-direction: column;
+}
+
+.container {
+    text-align: center;
+}
+
+.glow {
+    font-size: 3rem;
+    color: #fff;
+    text-shadow: 0 0 10px #ff00ff, 0 0 20px #ff00ff, 0 0 30px #ff00ff;
+}
+
+.instructions {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    color: #00ffff;
+}
+
+/* Grid container styling */
+#grid-container {
+    display: grid;
+    grid-template-columns: repeat(10, 40px);
+    grid-template-rows: repeat(10, 40px);
+    gap: 5px;
+}
+
+.grid-item {
+    background-color: #282828;
+    color: #fff;
+    font-size: 1.2rem;
+    text-align: center;
+    line-height: 40px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.grid-item.selected {
+    background-color: #ff00ff;
+}
+
+.grid-item.correct {
+    background-color: #00ff00;
+    color: #000;
+}
+
+/* Glowing button effect */
+.glowing-button {
+    font-size: 1.5rem;
+    padding: 15px 30px;
+    color: #fff;
+    background-color: #ff00ff;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-top: 20px;
+    box-shadow: 0 0 10px #ff00ff, 0 0 20px #ff00ff, 0 0 30px #ff00ff;
+    transition: 0.3s;
+}
+
+.glowing-button:hover {
+    box-shadow: 0 0 20px #00ffff, 0 0 30px #00ffff;
+}
+
+/* Score container styling */
+.score-container {
+    margin-top: 20px;
+    font-size: 1.2rem;
+}

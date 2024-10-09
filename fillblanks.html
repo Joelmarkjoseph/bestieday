@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fill in the Blanks Game</title>
+    <link rel="stylesheet" href="fbstyles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1 class="glow">Fill in the Blanks Puzzle</h1>
+      <p class="instructions">
+        Enter the missing letters to complete the word:
+      </p>
+
+      <div class="word-container" id="word-container">
+        <!-- Word with blanks will appear here -->
+      </div>
+
+      <div class="input-container">
+        <input
+          type="text"
+          id="userInput"
+          placeholder="Enter missing letters here"
+        />
+        <button id="submitButton" class="glowing-button">Submit</button>
+      </div>
+
+      <div id="resultMessage"></div>
+
+      <button id="resetButton" class="glowing-button">Reset Game</button>
+    </div>
+
+    <script src="fbscript.js"></script>
+  </body>
+</html>
